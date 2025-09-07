@@ -9,6 +9,7 @@
                 "src/core/hello.cpp",
                 "src/utils/greet.cpp",
                 "src/basics/variables.cpp",
+                "src/basics/functions.cpp",
                 "-I",
                 "include",
                 "-o",

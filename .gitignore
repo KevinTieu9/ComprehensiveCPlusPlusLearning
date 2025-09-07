@@ -1,0 +1,89 @@
+# ==========================================
+# Git Ignore Rules for Comprehensive C++ Learning Project
+# Prevents build artifacts, editor settings, and OS clutter
+# from being committed to the repository.
+# ==========================================
+
+# --- Build Artifacts ---
+bin/
+build/
+*.exe
+*.obj
+*.o
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.pdb
+*.ilk
+
+# --- Compiler / Tool Generated ---
+*.log
+*.pch
+*.gen
+*.out
+*.cache
+
+# --- Debug / Profiling ---
+*.gcda
+*.gcno
+*.prof
+
+# --- CMake / Make (future-proofing) ---
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# --- Visual Studio (if you open with VS) ---
+*.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.sln
+*.ipch/
+*.sdf
+*.opensdf
+*.tlog/
+
+# --- VSCode Settings (keep only tasks.json) ---
+.vscode/*
+!.vscode/tasks.json
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Temporary / Backup ---
+*.tmp
+*.temp
+*~
+*.swp
+
+# --- Python helper scripts (if added later) ---
+__pycache__/
+*.pyc
+
+# --- Data Outputs (keep sample inputs/outputs if wanted) ---
+# data/*
+# !data/test_inputs.txt
+# !data/sample_outputs.txt
+
+# --- Documentation (ignore entire docs folder) ---
+docs/
+# If you later want to track a README inside docs:
+# !docs/README.md
+
+# --- Ignore secrets if any created later ---
+.env
+*.env
+secrets.json
+
+# ==========================================
+# Notes:
+# 1. If you add libraries (e.g., /third_party), ignore their build outputs.
+# 2. Remove a pattern here if you actually DO want to version it.
+# 3. To force add an ignored file: git add -f <file>.
+# ==========================================

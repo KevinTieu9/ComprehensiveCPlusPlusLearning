@@ -26,7 +26,9 @@ int main() { // Main function: program entry point
     while (choice != 0) {
     std::cout << "\n--- Main Menu ---\n";
     std::cout << "1. Demonstrate Variables\n";
+    std::cout << "2. Demonstrate Functions\n";
     std::cout << "0. Exit\n";
+    
     std::cout << "Enter your choice: ";
     std::cin >> choice;
 
@@ -36,7 +38,12 @@ int main() { // Main function: program entry point
             std::cin.ignore(); // Clear the newline from menu input
             demonstrateVariables();
             break;
-        case 0: //q is used to exit the screen instead as a quit case
+        case 2:
+            clearScreen(); // Clear the screen before showing functions
+            std::cin.ignore(); // Clear the newline from menu input
+            demonstrateFunctions();
+            break;
+        case 0: //0 is used to exit the screen instead as a quit case
             std::cout << "Exiting program.\n";
             break;
         default:

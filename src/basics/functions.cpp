@@ -37,13 +37,17 @@
 
 // TODO: Declare global variables (accessible from all functions)
 // Research: When to use global vs local variables?
-//int globalCounter = 0;
+// local variables when possible 
+int globalCounter = 0;
 
 // TODO: Create a simple void function (no return value)
 // Function signature: void greetUser()
 // Purpose: Display a welcome message
 // Parameters: None
 // Example usage: greetUser();
+void greetUser() {
+    std::cout << "Welcome to the Functions Module!" << std::endl;
+}
 
 // TODO: Create a function with return value
 // Function signature: int addNumbers(int a, int b)
@@ -51,6 +55,9 @@
 // Parameters: Two integers to add
 // Returns: Sum of the two numbers
 // Example usage: int result = addNumbers(5, 3);
+int addNumbers(int a, int b) {
+    return a + b;
+}
 
 // TODO: Create a function with string parameter
 // Function signature: std::string formatMessage(std::string name, int age)
@@ -58,6 +65,9 @@
 // Parameters: Person's name and age
 // Returns: Formatted string message
 // Example usage: std::string msg = formatMessage("Alice", 25);
+std::string formatMessage(std::string name, int age) {
+    return "Name: " + name + ", Age: " + std::to_string(age);
+}
 
 // TODO: Demonstrate pass by reference
 // Function signature: void swapValues(int& a, int& b)
@@ -65,18 +75,39 @@
 // Parameters: Two integers (passed by reference)
 // Returns: Nothing (values swapped in place)
 // Research: Difference between & and no & in parameters?
+void swapValues(int& a, int& b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
 
 // TODO: Create overloaded functions (same name, different parameters)
 // Function signatures:
 // double calculateArea(double radius)  // Circle area
 // double calculateArea(double length, double width)  // Rectangle area
 // Research: How does C++ know which version to call?
+double calculateArea(double radius) {
+    return 3.14159 * radius * radius; // Area of circle
+}
+
+// Added missing overload to fix "too many arguments" error when calling calculateArea(4.0, 6.0)
+double calculateArea(double length, double width) {
+    // Basic validation (optional): treat negatives as zero area
+    if (length < 0 || width < 0) {
+        std::cout << "Warning: Negative dimension passed to calculateArea(length,width). Returning 0.\n";
+        return 0.0;
+    }
+    return length * width; // Area of rectangle
+}
 
 // TODO: Function with default parameters
 // Function signature: void displayInfo(std::string name, int age = 18, std::string city = "Unknown")
 // Purpose: Display person info with default values
 // Parameters: name (required), age and city (optional with defaults)
 // Research: Rules for default parameters?
+void displayInfo(std::string name, int age = 18, std::string city = "Unknown") {
+    std::cout << "Name: " << name << ", Age: " << age << ", City: " << city << std::endl;
+}
 
 // TODO: Demonstrate function scope
 // Create functions that show:
@@ -84,6 +115,12 @@
 // - Global variables (accessible everywhere)
 // - Parameter scope
 // Research: What happens to local variables when function ends?
+void demonstrateScope() {
+    int localVar = 10; // Local variable
+    globalCounter++;   // Accessing global variable
+    std::cout << "Local Variable: " << localVar << std::endl;
+    std::cout << "Global Counter: " << globalCounter << std::endl;
+}
 
 /*
  * TODO: Create a main demonstration function
@@ -93,9 +130,49 @@
  * 2. Display results using cout
  * 3. Show examples of each concept
  * 4. Demonstrate scope differences
- *
  * Function signature: void demonstrateFunctions()
  */
+
+void demonstrateFunctions() {
+    // Call void function
+    greetUser();
+
+    std::cout << std::endl;
+
+    // Call function with return value
+    int sum = addNumbers(5, 10);
+    std::cout << "Sum of 5 and 10 is: " << sum << std::endl;
+
+    // Call function with string parameter
+    std::string message = formatMessage("Bob", 30);
+    std::cout << "Formatted Message: " << message << std::endl;
+
+    // Demonstrate pass by reference
+    int x = 15, y = 25;
+    std::cout << "Before Swap: x = " << x << ", y = " << y << std::endl;
+    swapValues(x, y);
+    std::cout << "After Swap: x = " << x << ", y = " << y << std::endl;
+
+    // Call overloaded functions
+    double circleArea = calculateArea(5.0);
+    double rectArea = calculateArea(4.0, 6.0);
+    std::cout << "Circle Area (radius 5): " << circleArea << std::endl;
+    std::cout << "Rectangle Area (4x6): " << rectArea << std::endl;
+
+    // Call function with default parameters
+    displayInfo("Charlie");
+    displayInfo("Diana", 22);
+    displayInfo("Eve", 28, "New York");
+
+    // Demonstrate function scope
+    demonstrateScope();
+
+    std::cout << std::endl;
+
+    std::cout << "Press ENTER to continue...";
+    std::cin.get();
+}
+
 
 /*
  * TODO: In your main program (src/core/hello.cpp),
@@ -112,8 +189,7 @@
  * case 2:  // Add this case
  *     demonstrateFunctions();
  *     break;
- */
-
+/
 /*
  * ADVANCED CHALLENGES (Optional):
  * 1. Create recursive functions (functions that call themselves)

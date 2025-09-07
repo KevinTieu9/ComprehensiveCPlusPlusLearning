@@ -94,7 +94,7 @@ HelloWorld/
    - Memory usage (sizeof)
    - Type conversion
 
-2. **Functions & Parameters** - `src/basics/functions.cpp` (planned)
+2. **Functions & Parameters** - `src/basics/functions.cpp`
    - Function declarations
    - Parameters and return values
    - Function overloading
@@ -220,22 +220,28 @@ HelloWorld/
     - Rotational kinematics and dynamics
     - Applications: vehicle physics, mechanical systems
 
-### **Phase 5: Advanced C++ + Calculus 3 + Advanced Physics** 🔴
+### **Phase 5: Algorithms + Advanced C++ + Calculus 3 + Advanced Physics** 🔴
 **Prerequisites:** OOP, Calculus 3, Mechanics
-**Academic Focus:** Calculus 3 (Vector Calculus) + Physics 2 & 3
+**Academic Focus:** Algorithms (CS Theory) + Calculus 3 (Vector Calculus) + Physics 2 & 3
 **Physics Prerequisites:** Calculus 3 + Mechanics (for both Waves and E&M)
 
-23. **STL Containers** - `src/stl/containers.cpp`
+23. **Algorithm Fundamentals** - `src/algorithms/`
+    - **Sorting Algorithms** - QuickSort, MergeSort, BubbleSort (Pseudocode Focus)
+    - **Search Algorithms** - Binary Search, Linear Search
+    - **Dynamic Programming** - Fibonacci, Knapsack problems
+    - **Graph Algorithms** - BFS, DFS, Shortest Paths
+
+24. **STL Containers** - `src/stl/containers.cpp`
     - vector, map, set, queue
     - Container operations
     - Performance characteristics
 
-24. **STL Algorithms** - `src/stl/algorithms.cpp`
+25. **STL Algorithms** - `src/stl/algorithms.cpp`
     - sort, find, transform
     - Lambda functions
     - Custom comparators
 
-25. **Advanced C++** - `src/advanced/`
+26. **Advanced C++** - `src/advanced/`
     - Templates and metaprogramming
     - Exception handling
     - Modern C++ features (C++11/14/17/20)
